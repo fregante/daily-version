@@ -25,6 +25,10 @@ $ daily-version
 For example, it can be used to set the version of a Web Extension in a Travis cronjob:
 
 ```yml
+cache:
+  directories:
+  - $HOME/.npm-daily-version # This is necessary to preserve the version
+
 script:
  - dot-json manifest.json version $(daily-version)
  - webstore upload --auto-publish
