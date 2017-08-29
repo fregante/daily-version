@@ -1,0 +1,16 @@
+{
+  "name": "daily-version",
+  "version": "0.0.0",
+  "description": "Get the current date formatted as a version. Automatically add the time if you already released a version today.",
+  "bin": "index.sh",
+  "license": "MIT",
+  "repository": "bfred-it/daily-version",
+  "author": "Federico Brigante <github@bfred.it> (bfred.it)",
+  "keywords": [],
+  "files": [
+    "index.sh"
+  ],
+  "scripts": {
+    "test": "shellcheck index.sh"
+  }
+}
