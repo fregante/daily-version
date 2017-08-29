@@ -1,6 +1,6 @@
 {
   "name": "daily-version",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Get the current date formatted as a version. Automatically add the time if you already released a version today.",
   "bin": "index.sh",
   "license": "MIT",
