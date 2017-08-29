@@ -2,7 +2,7 @@
 
 > Get the current date formatted as a version. Automatically add the time if you already released a version today.
 
-This command line tool can be used to version your nightly builds while still allowing hot patches to have their own version number.
+This command line tool can be used to version your nightly builds while still allowing hot patches to have their own version number. **`daily-version` is meant to be used on CI** as it automatically caches **one** version, globally.
 
 
 ## Install
