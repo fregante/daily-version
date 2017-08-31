@@ -14,24 +14,48 @@ $ npm install --save daily-version
 
 ## Usage
 
+`daily-version` needs to be called with a [keyvalue.xyz](https://keyvalue.xyz/) ID as its first parameter:
+
 ```sh
-$ daily-version
+$ daily-version a17766c6
 17.8.29
 
-$ daily-version
+$ daily-version a17766c6
 17.8.29.1451
 ```
+
+To get this ID, run this command on your machine:
+
+```sh
+curl -X POST https://api.keyvalue.xyz/new/myKey
+```
+
+
+### Travis
 
 For example, it can be used to set the version of a Web Extension in a Travis cronjob:
 
 ```yml
-cache:
-  directories:
-  - $HOME/.npm-daily-version # This is necessary to preserve the version
+# travis.yml
+deploy:
+  provider: script
+  script: npm run update-version && npm run upload
+  on:
+    condition: $TRAVIS_EVENT_TYPE = cron
+```
 
-script:
- - dot-json manifest.json version $(daily-version)
- - webstore upload --auto-publish
+
+```js
+// package.json
+{
+    "scripts": {
+        // https://github.com/maikelvl/dot-json
+        "update-version": "dot-json manifest.json version $(daily-version a17766c6)"
+
+        // https://github.com/DrewML/chrome-webstore-upload-cli/
+        "upload": "webstore upload --auto-publish"
+    }
+}
 ```
 
 
