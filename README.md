@@ -27,7 +27,7 @@ $ daily-version a17766c6
 To get this ID, run this command on your machine:
 
 ```sh
-curl -X POST https://api.keyvalue.xyz/new/myKey
+curl -X POST https://api.keyvalue.xyz/new/npm-daily-version
 ```
 
 
