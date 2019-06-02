@@ -1,35 +1,29 @@
 # daily-version [![Build Status](https://travis-ci.org/bfred-it/daily-version.svg?branch=master)](https://travis-ci.org/bfred-it/daily-version)
 
-> Get the current date formatted as a version. Automatically add the time if you already released a version today.
+> Get the current date formatted as a version. Automatically add the time if there's already a git tag for today's version.
 
-This command line tool can be used to version your nightly builds while still allowing hot patches to have their own version number. **`daily-version` is meant to be used on CI** as it automatically caches **one** version, globally.
-
+`daily-version` can be used to version your daily/nightly builds while still allowing multiple versions each day.
 
 ## Install
 
 ```
-$ npm install --save daily-version
+$ npm install daily-version
 ```
 
 
 ## Usage
 
-`daily-version` needs to be called with a [keyvalue.xyz](https://keyvalue.xyz/) ID as its first parameter:
-
 ```sh
-$ daily-version a17766c6
+$ daily-version
 17.8.29
 
-$ daily-version a17766c6
+$ git tag $(daily-version)
+# Creates a tag named 17.8.29
+
+$ daily-version
 17.8.29.1451
+# Detects the existing tag, and includes generates a sub-version based on the hours/seconds
 ```
-
-To get this ID, run this command on your machine:
-
-```sh
-curl -X POST https://api.keyvalue.xyz/new/npm-daily-version
-```
-
 
 ### Travis
 
@@ -44,13 +38,12 @@ deploy:
     condition: $TRAVIS_EVENT_TYPE = cron
 ```
 
-
 ```js
 // package.json
 {
     "scripts": {
         // https://github.com/maikelvl/dot-json
-        "update-version": "dot-json manifest.json version $(daily-version a17766c6)"
+        "update-version": "dot-json manifest.json version $(daily-version)"
 
         // https://github.com/DrewML/chrome-webstore-upload-cli/
         "upload": "webstore upload --auto-publish"
