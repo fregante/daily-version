@@ -1,4 +1,4 @@
-# daily-version [![Build Status](https://travis-ci.org/bfred-it/daily-version.svg?branch=master)](https://travis-ci.org/bfred-it/daily-version)
+# daily-version [![Build Status](https://travis-ci.org/fregante/daily-version.svg?branch=master)](https://travis-ci.org/fregante/daily-version)
 
 > Get the current date formatted as a version. Automatically add the time if there's already a git tag for today's version.
 
@@ -54,5 +54,5 @@ deploy:
 
 ## License
 
-MIT © [Federico Brigante](http://twitter.com/bfred_it)
+MIT © [Federico Brigante](https://bfred.it)
 
