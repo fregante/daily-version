@@ -13,10 +13,10 @@
   "repository": "fregante/daily-version",
   "license": "MIT",
   "author": "Federico Brigante <opensource@bfred.it> (bfred.it)",
+  "bin": "index.sh",
   "files": [
     "index.sh"
   ],
-  "bin": "index.sh",
   "scripts": {
     "test": "shellcheck index.sh"
   },
