@@ -1,12 +1,11 @@
-#! /bin/bash
+#!/bin/bash
 
-YEAR=${1:-y}
-CURR=$(date -u +%"$YEAR".%-m.%-d)
+HEAD=$1
+TODAY=$(utc-version --short)
 
 # Check if there's already a tag for today
-if [ "$(git tag -l "$CURR")" ]; then
-	utc-version
+if [ "$(git tag -l "$HEAD$TODAY")" ]; then
+	echo "$HEAD$(utc-version)"
 else
-	echo "$CURR"
+	echo "$TODAY"
 fi
-
