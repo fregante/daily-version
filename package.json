@@ -13,14 +13,19 @@
   "repository": "fregante/daily-version",
   "license": "MIT",
   "author": "Federico Brigante <opensource@bfred.it> (bfred.it)",
-  "bin": "index.sh",
+  "bin": "bin.js",
   "files": [
-    "index.sh"
+    "bin.js",
+    "index.js"
   ],
   "scripts": {
-    "test": "shellcheck index.sh"
+    "test": "xo && ava"
   },
   "dependencies": {
     "utc-version": "^2.0.1"
+  },
+  "devDependencies": {
+    "ava": "^3.8.2",
+    "xo": "^0.30.0"
   }
 }
