@@ -1,31 +1,33 @@
 {
-  "name": "daily-version",
-  "version": "1.0.0",
-  "description": "Get the current date formatted as a version. Automatically add the time if you already released a version today.",
-  "keywords": [
-    "version",
-    "release",
-    "year",
-    "time",
-    "tag",
-    "git"
-  ],
-  "repository": "fregante/daily-version",
-  "license": "MIT",
-  "author": "Federico Brigante <opensource@bfred.it> (bfred.it)",
-  "bin": "bin.js",
-  "files": [
-    "bin.js",
-    "index.js"
-  ],
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "dependencies": {
-    "utc-version": "^2.0.1"
-  },
-  "devDependencies": {
-    "ava": "^3.8.2",
-    "xo": "^0.30.0"
-  }
+	"name": "daily-version",
+	"version": "1.0.0",
+	"description": "Get the current date formatted as a version. Automatically add the time if you already released a version today.",
+	"keywords": [
+		"version",
+		"release",
+		"year",
+		"time",
+		"tag",
+		"git",
+		"cli",
+		"automated"
+	],
+	"repository": "fregante/daily-version",
+	"license": "MIT",
+	"author": "Federico Brigante <opensource@bfred.it> (bfred.it)",
+	"bin": "bin.js",
+	"files": [
+		"bin.js",
+		"index.js"
+	],
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"dependencies": {
+		"utc-version": "^2.0.1"
+	},
+	"devDependencies": {
+		"ava": "^3.8.2",
+		"xo": "^0.30.0"
+	}
 }

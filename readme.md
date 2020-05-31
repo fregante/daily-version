@@ -11,6 +11,8 @@
 
 Based on [utc-version](https://github.com/LinusU/utc-version), uses `git` to determine whether to use the short version (e.g. `20.12.31` or the long version `20.12.31.2330` if a tag of the first version already exists)
 
+It also exists as a GitHub Action: [fregante/daily-version-action](https://github.com/fregante/daily-version-action).
+
 ## Install
 
 ```sh
@@ -73,3 +75,7 @@ Optional
 ### GitHub Actions
 
 There's also an equivalent GitHub Action that makes it super easy: [daily-version-action](https://github.com/fregante/daily-version-action)
+
+## License
+
+MIT © [Federico Brigante](https://bfred.it)
