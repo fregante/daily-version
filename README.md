@@ -17,11 +17,11 @@ Based on [utc-version](https://github.com/LinusU/utc-version), uses `git` to det
 npm install daily-version
 ```
 
-## Usage
-
-You probably want to use this via CLI, but it also has a JavaScript API.
-
 ## API
+
+### dailyVersion(prefix?)
+
+Returns a string
 
 ```js
 const dailyVersion = require('daily-version');
@@ -39,16 +39,16 @@ dailyVersion('v');
 // Lets you specify any prefix
 ```
 
-### dailyVersion(prefix?)
-
-Returns a string
-
 #### prefix
 
 Type: `string`<br>
 Optional
 
 ## CLI
+
+### \$ daily-version prefix
+
+Outputs the version to stdout.
 
 ```sh
 $ daily-version
@@ -65,10 +65,6 @@ $ daily-version v
 v17.8.29.1451
 # Lets you specify any prefix
 ```
-
-### \$ daily-version prefix
-
-Outputs the version to stdout
 
 #### prefix
 
