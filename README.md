@@ -1,4 +1,7 @@
-# daily-version
+# <img align="right" width="350" src="https://user-images.githubusercontent.com/1402241/83365591-7c64c200-a3a9-11ea-952e-3313c74b844f.png"> daily-version [![][badge-gzip]][link-bundlephobia]
+
+[badge-gzip]: https://img.shields.io/bundlephobia/minzip/daily-version.svg?label=gzipped
+[link-bundlephobia]: https://bundlephobia.com/result?p=daily-version
 
 > Get the current date formatted as a version. Automatically add the time if there’s already a git tag for today’s version.
 
