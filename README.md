@@ -1,17 +1,49 @@
-# daily-version [![Build Status](https://travis-ci.org/fregante/daily-version.svg?branch=master)](https://travis-ci.org/fregante/daily-version)
+# daily-version
 
 > Get the current date formatted as a version. Automatically add the time if there’s already a git tag for today’s version.
 
 `daily-version` can be used to version your daily/nightly builds while still allowing multiple versions each day.
 
+Based on [utc-version](https://github.com/LinusU/utc-version), uses `git` to determine whether to use the short version (e.g. `20.12.31` or the long version `20.12.31.2330` if a tag of the first version already exists)
+
 ## Install
 
+```sh
+npm install daily-version
 ```
-$ npm install daily-version
-```
-
 
 ## Usage
+
+You probably want to use this via CLI, but it also has a JavaScript API.
+
+## API
+
+```js
+const dailyVersion = require('daily-version');
+
+dailyVersion();
+// -> 17.8.29
+
+// If 17.8.29 already exists and you call it
+dailyVersion();
+// -> 17.8.29.1451
+// Detects the existing tag, and includes generates a sub-version based on the hours/seconds
+
+dailyVersion('v');
+// -> v17.8.29.1451
+// Lets you specify any prefix
+```
+
+### dailyVersion(prefix?)
+
+Returns a string
+
+#### prefix
+
+Type: `string`<br>
+Optional
+
+## CLI
 
 ```sh
 $ daily-version
@@ -29,33 +61,14 @@ v17.8.29.1451
 # Lets you specify any prefix
 ```
 
+### \$ daily-version prefix
+
+Outputs the version to stdout
+
+#### prefix
+
+Optional
+
 ### GitHub Actions
 
-[This workflow](https://github.com/notlmn/browser-extension-template/blob/master/.github/workflows/deploy-automatic.yml) will create a new tag automatically, daily, using `daily-version`
-
-```yml
-# If new commits are available since the last tag, create a new version/tag
-# - Every day at 15:15
-
-name: Auto-tagger
-
-on:
-  schedule:
-    - cron: '15 15 * * *'
-
-jobs:
-  create-version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: fregante/setup-git-token@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - run:
-          git push --delete origin deploy
-          if [[ $(git tag -l --points-at HEAD) = "" ]]; then
-            export VER=$(npx daily-version)
-            git tag $VER -m $VER
-            git push origin $VER
-          fi
-```
+There's also an equivalent GitHub Action that makes it super easy: [daily-version-action](https://github.com/fregante/daily-version-action)
