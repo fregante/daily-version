@@ -5,17 +5,16 @@ on:
   - push
 
 jobs:
-
   XO:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - run: npm install
-    - run: npx xo
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npx xo
 
   AVA:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - run: npm install
-    - run: npx ava
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npx ava
